@@ -16,8 +16,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <!-- Estilos Personalizados -->
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <!-- Estilos Personalizados con Cache-Buster -->
+    <link href="style.css?v=<?php echo time(); ?>" type="text/css" rel="stylesheet">
 </head>
 
 <body>
