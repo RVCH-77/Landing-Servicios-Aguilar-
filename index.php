@@ -334,86 +334,116 @@
                 </div>
             </div>
 
-            <!-- Grilla de Alcance Total de Servicios (6 Módulos Especializados) -->
+            <!-- ==========================================================================
+                 ALCANCE TOTAL: CARRUSEL DE 6 CAPACIDADES (ESTILO BEAN SCENE)
+                 ========================================================================== -->
             <div class="services-scope-section">
+                <!-- Encabezado Centrado -->
                 <div class="services-scope-header text-center reveal-up">
-                    <span class="section-label">Alcance Total</span>
-                    <h3 class="services-scope-title">Catálogo Completo de Capacidades Técnicas</h3>
-                    <p class="services-scope-subtitle">Cubrimos todas las necesidades térmicas de su empresa, desde el cálculo inicial hasta pólizas 24/7.</p>
+                    <span class="section-label">Alcance Total & Diferenciadores</span>
+                    <h3 class="services-scope-title">¿Por qué somos la mejor opción para tu empresa?</h3>
+                    <p class="services-scope-subtitle">No solo reparamos equipos, aseguramos la continuidad operativa y la rentabilidad de su negocio con estándares de clase mundial.</p>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Tarjeta 1: Venta y Distribución -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-box-seam"></i>
+                <!-- Carrusel Interactivo de Tarjetas -->
+                <div class="scope-carousel-wrapper position-relative reveal-up">
+                    <!-- Botón Anterior -->
+                    <button type="button" class="btn-scope-nav btn-scope-prev" id="btn-scope-prev" aria-label="Servicio anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <!-- Pista de Desplazamiento Horizontal (Scroll Snap) -->
+                    <div class="scope-carousel-track" id="scope-carousel-track">
+                        <!-- Tarjeta 1: Venta y Distribución -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-box-seam"></i>
+                                </div>
+                                <h4>Venta y Distribución</h4>
+                                <p>Equipos de marcas líderes, refacciones 100% originales y refrigerantes ecológicos certificados.</p>
+                                <span class="scope-tag">Tecnología Inverter</span>
                             </div>
-                            <h4>Venta y Distribución</h4>
-                            <p>Equipos de marcas líderes, refacciones 100% originales y refrigerantes ecológicos que protegen el medio ambiente.</p>
-                            <span class="scope-tag">Tecnología Inverter</span>
+                        </div>
+
+                        <!-- Tarjeta 2: Diseño e Ingeniería Térmica -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-calculator"></i>
+                                </div>
+                                <h4>Diseño e Ingeniería</h4>
+                                <p>Planificación y cálculo de carga térmica precisa para proyectos comerciales e industriales.</p>
+                                <span class="scope-tag">Cálculo de Cargas</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: Instalación Certificada -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <h4>Instalación Certificada</h4>
+                                <p>Montaje seguro de ductos, tuberías, manejadoras de aire (UMA), chillers y cuartos fríos herméticos.</p>
+                                <span class="scope-tag">Montaje Seguro</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4: Mantenimiento Preventivo -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <h4>Mantenimiento Preventivo</h4>
+                                <p>Limpieza profunda de serpentines, medición de presiones, amperajes y calibración para evitar paros.</p>
+                                <span class="scope-tag">Pólizas Periódicas</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 5: Servicio Técnico Urgente 24/7 -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <h4>Reparación y Urgencias 24/7</h4>
+                                <p>Diagnóstico de fallas urgentes las 24 horas, detección de fugas de gas y cambio de compresores con garantía.</p>
+                                <span class="scope-tag">Respuesta 24/7</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 6: Sustentabilidad y Ahorro -->
+                        <div class="scope-carousel-item">
+                            <div class="service-scope-card h-100">
+                                <div class="scope-icon-box">
+                                    <i class="bi bi-leaf"></i>
+                                </div>
+                                <h4>Sustentabilidad & Ahorro</h4>
+                                <p>Tecnología Inverter y gases ecológicos que reducen sustancialmente el gasto eléctrico y la huella de carbono.</p>
+                                <span class="scope-tag">Ahorro de Luz</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: Diseño e Ingeniería Térmica -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-calculator"></i>
-                            </div>
-                            <h4>Diseño e Ingeniería</h4>
-                            <p>Planificación y cálculo de carga térmica precisa para proyectos residenciales, comerciales e industriales de alta demanda.</p>
-                            <span class="scope-tag">Cálculo de Cargas</span>
-                        </div>
-                    </div>
+                    <!-- Botón Siguiente -->
+                    <button type="button" class="btn-scope-nav btn-scope-next" id="btn-scope-next" aria-label="Siguiente servicio">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
 
-                    <!-- Tarjeta 3: Instalación Profesional -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-tools"></i>
-                            </div>
-                            <h4>Instalación Profesional</h4>
-                            <p>Montaje seguro de ductos, tuberías, unidades manejadoras de aire (UMA), chillers y cuartos fríos herméticos.</p>
-                            <span class="scope-tag">Montaje Seguro</span>
-                        </div>
-                    </div>
+                <!-- Indicadores / Dots del Carrusel -->
+                <div class="scope-carousel-dots d-flex justify-content-center gap-2 mt-4" id="scope-carousel-dots"></div>
 
-                    <!-- Tarjeta 4: Mantenimiento Preventivo -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-shield-check"></i>
-                            </div>
-                            <h4>Mantenimiento Preventivo</h4>
-                            <p>Limpieza profunda de serpentines, medición de presiones, amperajes y calibración de sistemas para evitar paros costosos.</p>
-                            <span class="scope-tag">Pólizas Periódicas</span>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 5: Servicio Técnico Correctivo 24/7 -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-lightning-charge"></i>
-                            </div>
-                            <h4>Reparación y Urgencias 24/7</h4>
-                            <p>Diagnóstico de fallas urgentes las 24 horas, reparación de fugas de gas, fallas eléctricas y cambio de compresores con garantía.</p>
-                            <span class="scope-tag">Respuesta 24/7</span>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 6: Sustentabilidad y Ahorro Energético -->
-                    <div class="col-md-6 col-lg-4 reveal-up">
-                        <div class="service-scope-card h-100">
-                            <div class="scope-icon-box">
-                                <i class="bi bi-leaf"></i>
-                            </div>
-                            <h4>Sustentabilidad & Confort</h4>
-                            <p>Equipos con tecnología Inverter y gases ecológicos que reducen sustancialmente su gasto eléctrico y huella de carbono.</p>
-                            <span class="scope-tag">Ahorro de Luz</span>
-                        </div>
-                    </div>
+                <!-- Bloque CTA Inferior (Inspirado en Bean Scene: "Great ideas start with...") -->
+                <div class="scope-cta-strip text-center mt-5 reveal-up">
+                    <h4>Grandes proyectos inician con una asesoría técnica especializada.</h4>
+                    <p>Permítanos evaluar sus instalaciones y ofrecerle la solución más eficiente y rentable para su empresa.</p>
+                    <a href="https://wa.me/524777871179?text=Hola,%20solicito%20una%20asesor%C3%ADa%20t%C3%A9cnica%20para%20un%20proyecto" target="_blank" class="btn btn-primary-hero">
+                        <span>Comenzar Hoy Mismo</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -666,7 +696,57 @@
             });
         })();
 
-        // 3. Animaciones de Entrada con Scroll (Reveal Up / Left / Right)
+        // 3. Interactividad del Carrusel de Alcance Total
+        (function() {
+            const track = document.getElementById('scope-carousel-track');
+            const prevBtn = document.getElementById('btn-scope-prev');
+            const nextBtn = document.getElementById('btn-scope-next');
+            const dotsContainer = document.getElementById('scope-carousel-dots');
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            const items = track.querySelectorAll('.scope-carousel-item');
+            if (items.length === 0) return;
+
+            // Generar dots dinámicos
+            items.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = `scope-dot ${i === 0 ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Ir a diapositiva ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    const itemWidth = items[0].offsetWidth + 24;
+                    track.scrollTo({ left: i * itemWidth, behavior: 'smooth' });
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.scope-dot');
+
+            function getScrollAmount() {
+                return items[0].offsetWidth + 24;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            // Actualizar active dot al hacer scroll
+            track.addEventListener('scroll', () => {
+                const scrollLeft = track.scrollLeft;
+                const itemWidth = items[0].offsetWidth + 24;
+                const activeIndex = Math.min(items.length - 1, Math.max(0, Math.round(scrollLeft / itemWidth)));
+                dots.forEach((d, idx) => {
+                    d.classList.toggle('active', idx === activeIndex);
+                });
+            }, { passive: true });
+        })();
+
+        // 4. Animaciones de Entrada con Scroll (Reveal Up / Left / Right)
         document.addEventListener('DOMContentLoaded', () => {
             const directionalReveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
             
