@@ -429,6 +429,449 @@ a {
 }
 
 /* ==========================================================================
+   SECCIÓN SERVICIOS CON MAZO DE TARJETAS 3D (ESTILO CLANDESTINE)
+   ========================================================================== */
+.services-section {
+    background-color: var(--color-hero-bg);
+    padding: 7.5rem 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.services-header {
+    max-width: 860px;
+    margin: 0 auto 4rem auto;
+}
+
+/* Contenedor del Mazo 3D (Showcase) */
+.services-deck-container {
+    background: #FFFFFF;
+    border-radius: 36px;
+    padding: 3.5rem 3.5rem;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 5.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mazo de Tarjetas 3D (Columna Izquierda) */
+.deck-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 480px;
+    margin: 0 auto;
+    perspective: 1200px;
+}
+
+.deck-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #0F172A;
+    will-change: transform, opacity;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease, filter 0.35s ease;
+}
+
+.deck-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tarjeta trasera 2 (fondo profundo a la izquierda) */
+.deck-card-back-2 {
+    transform: translate(-30px, -18px) rotate(-8deg) scale(0.88);
+    opacity: 0.4;
+    filter: blur(1.5px) brightness(0.65);
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(11, 30, 54, 0.15);
+}
+
+/* Tarjeta trasera 1 (fondo medio a la derecha) */
+.deck-card-back-1 {
+    transform: translate(25px, -10px) rotate(5deg) scale(0.94);
+    opacity: 0.75;
+    filter: blur(0.5px) brightness(0.85);
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(11, 30, 54, 0.2);
+}
+
+/* Tarjeta frontal activa */
+.deck-card-front {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 25px 60px rgba(11, 30, 54, 0.24);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.deck-badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    background: rgba(11, 30, 54, 0.85);
+    backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.95rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+}
+
+.deck-float-pill {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background: #FFFFFF;
+    color: #0F172A;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.05rem;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.deck-float-pill i {
+    color: #0077B6;
+    font-size: 1rem;
+}
+
+/* Contenido de la Ficha Técnica (Columna Derecha) */
+.deck-content-box {
+    will-change: transform, opacity;
+}
+
+.deck-category-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.deck-service-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.18;
+    letter-spacing: -0.8px;
+    margin-bottom: 0.35rem;
+}
+
+.deck-service-subtitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0077B6;
+    margin-bottom: 1.2rem;
+}
+
+.deck-description {
+    font-size: 1.02rem;
+    color: var(--color-text-muted);
+    line-height: 1.68;
+    margin-bottom: 1.5rem;
+}
+
+.deck-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.deck-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.deck-features-list li i {
+    color: #0077B6;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Barra de Controles y Botones (Estilo Clandestine) */
+.deck-controls-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.deck-nav-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-deck-nav {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(15, 23, 42, 0.15);
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(11, 30, 54, 0.06);
+    transition: var(--transition-smooth);
+}
+
+.btn-deck-nav:hover {
+    background: #0077B6;
+    color: #FFFFFF;
+    border-color: #0077B6;
+    transform: scale(1.08);
+    box-shadow: 0 6px 18px rgba(0, 119, 182, 0.3);
+}
+
+.btn-deck-nav:active {
+    transform: scale(0.95);
+}
+
+.deck-counter {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #64748B;
+    font-size: 1.05rem;
+    margin-left: 0.5rem;
+}
+
+.deck-counter .current {
+    color: #0F172A;
+    font-size: 1.25rem;
+}
+
+.deck-counter .divider {
+    margin: 0 4px;
+    color: #CBD5E1;
+}
+
+.deck-counter .total {
+    color: #94A3B8;
+    font-size: 0.95rem;
+}
+
+/* Grilla de Alcance Total */
+.services-scope-section {
+    margin-bottom: 4.5rem;
+}
+
+.services-scope-header {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.services-scope-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+}
+
+.services-scope-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.service-scope-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 2.2rem 2rem;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 10px 30px rgba(11, 30, 54, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.service-scope-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 119, 182, 0.3);
+    box-shadow: 0 20px 40px rgba(11, 30, 54, 0.08);
+}
+
+.scope-icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.1) 0%, rgba(0, 180, 216, 0.15) 100%);
+    color: #0077B6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.4rem;
+    transition: var(--transition-smooth);
+}
+
+.service-scope-card:hover .scope-icon-box {
+    background: linear-gradient(135deg, #0B1E36 0%, #0077B6 100%);
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+.service-scope-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 0.65rem;
+}
+
+.service-scope-card p {
+    font-size: 0.94rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.scope-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0077B6;
+    background: #E0F2FE;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+}
+
+/* Banner de Cobertura y Ventajas */
+.services-coverage-banner {
+    background: linear-gradient(135deg, #0B1E36 0%, #0F2942 50%, #004D74 100%);
+    border-radius: 28px;
+    padding: 3rem 3.5rem;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(11, 30, 54, 0.2);
+}
+
+.services-coverage-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.coverage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: #38BDF8;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+}
+
+.coverage-title {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+}
+
+.coverage-desc {
+    color: #CBD5E1;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+}
+
+.coverage-desc strong {
+    color: #FFFFFF;
+}
+
+.coverage-perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.coverage-perk-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #E2E8F0;
+}
+
+.coverage-perk-item i {
+    color: #38BDF8;
+    font-size: 1.1rem;
+}
+
+.btn-banner-cta {
+    background-color: #25D366;
+    color: #FFFFFF !important;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 0.95rem 2rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    border: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-banner-cta:hover {
+    background-color: #20BA5A;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+}
+
+/* ==========================================================================
    SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 .reveal-left {
@@ -548,6 +991,34 @@ a {
         max-width: 100%;
         margin: 0 auto;
         border-radius: 28px;
+    }
+
+    /* Servicios Tablet */
+    .services-section {
+        padding: 5rem 0;
+    }
+
+    .services-deck-container {
+        padding: 2.5rem 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .deck-wrapper {
+        max-width: 380px;
+        height: 400px;
+        margin-bottom: 1.5rem;
+    }
+
+    .deck-service-title {
+        font-size: 1.9rem;
+    }
+
+    .services-scope-title {
+        font-size: 2rem;
+    }
+
+    .services-coverage-banner {
+        padding: 2.4rem;
     }
 
     .reveal-left,
@@ -685,4 +1156,142 @@ a {
         font-size: 0.88rem;
         line-height: 1.5;
     }
+
+    /* Servicios en Celular */
+    .services-section {
+        padding: 3.5rem 0;
+    }
+
+    .services-header {
+        margin-bottom: 2.2rem;
+    }
+
+    .services-deck-container {
+        padding: 1.5rem 1.25rem;
+        border-radius: 24px;
+        margin-bottom: 3.5rem;
+    }
+
+    .deck-wrapper {
+        max-width: 290px;
+        height: 320px;
+        margin-bottom: 1.5rem;
+    }
+
+    .deck-card {
+        border-radius: 22px;
+    }
+
+    .deck-card-back-2 {
+        transform: translate(-18px, -10px) rotate(-6deg) scale(0.90);
+    }
+
+    .deck-card-back-1 {
+        transform: translate(15px, -6px) rotate(4deg) scale(0.95);
+    }
+
+    .deck-service-title {
+        font-size: 1.5rem;
+        line-height: 1.22;
+        margin-bottom: 0.35rem;
+    }
+
+    .deck-service-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .deck-description {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+    }
+
+    .deck-features-list {
+        gap: 0.65rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .deck-features-list li {
+        font-size: 0.88rem;
+    }
+
+    .deck-controls-bar {
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .deck-controls-bar .btn-primary-hero {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .services-scope-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .services-scope-header {
+        margin-bottom: 2rem;
+    }
+
+    .services-scope-title {
+        font-size: 1.6rem;
+    }
+
+    .services-scope-subtitle {
+        font-size: 0.92rem;
+    }
+
+    .service-scope-card {
+        padding: 1.5rem 1.3rem;
+        border-radius: 18px;
+    }
+
+    .scope-icon-box {
+        width: 46px;
+        height: 46px;
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-scope-card h4 {
+        font-size: 1.15rem;
+    }
+
+    .service-scope-card p {
+        font-size: 0.88rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .services-coverage-banner {
+        padding: 1.75rem 1.4rem;
+        border-radius: 20px;
+    }
+
+    .coverage-title {
+        font-size: 1.45rem;
+    }
+
+    .coverage-desc {
+        font-size: 0.92rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .coverage-perks {
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .coverage-perk-item {
+        font-size: 0.85rem;
+    }
+
+    .btn-banner-cta {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.5rem;
+    }
 }
+
+
