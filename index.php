@@ -171,6 +171,15 @@
                                 <p>Atención especializada de emergencia las 24 horas para resolver fugas, fallas eléctricas o compresores, garantizando la continuidad de su negocio.</p>
                             </div>
                         </div>
+
+                        <!-- Pilar 04 -->
+                        <div class="about-pillar-row">
+                            <span class="pillar-number"> 04 </span>
+                            <div class="pillar-body">
+                                <h3>Cobertura Nacional</h3>
+                                <p> Cubrimos todo el territorio nacional para brindar soluciones de refrigeración a todo tipo de empresas.  </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
