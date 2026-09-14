@@ -25,10 +25,12 @@
     <header class="main-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg main-navbar">
-                <!-- Marca / Logotipo -->
+                <!-- Marca / Logotipo Limpio -->
                 <a class="brand-wrapper" href="#inicio">
-                    <img src="image/logo.png" alt="Logo Multiservicios Aguilar" class="img-fluid brand-logo">
-                    <span class="brand-title">Multiservicios Aguilar</span>
+                    <span class="brand-icon-pill">
+                        <i class="bi bi-fan"></i>
+                    </span>
+                    <span class="brand-title">Multiservicios <span>Aguilar</span></span>
                 </a>
 
                 <!-- Botón Hamburguesa Responsive -->
@@ -115,11 +117,72 @@
         </div>
     </section>
 
+    <!-- Sección Nosotros / ¿Quiénes Somos? (Espaciosa, Sin Saturación) -->
+    <section class="about-section" id="nosotros">
+        <div class="container">
+            <!-- Encabezado Superior a Ancho Completo / Centrado -->
+            <div class="about-header text-center reveal-up">
+                <span class="section-label">Sobre Nosotros</span>
+                <h2 class="section-title">
+                    Liderazgo y precisión técnica en cada grado de temperatura
+                </h2>
+                <p class="section-lead">
+                    En <strong>Multiservicios Aguilar</strong> somos especialistas en soluciones integrales de refrigeración comercial e industrial. Respaldamos a nuestros clientes con tecnología de vanguardia y respuesta inmediata para garantizar que su cadena de frío nunca se detenga.
+                </p>
+            </div>
+
+            <!-- Grilla Inferior: Fotografía a la Izquierda + Tarjetas a la Derecha -->
+            <div class="row align-items-stretch g-4 g-lg-5">
+                <!-- Columna Izquierda: Fotografía Real -->
+                <div class="col-lg-5 reveal-left">
+                    <div class="about-image-container h-100">
+                        <div class="about-image-wrapper h-100">
+                            <img src="image/about-technician.jpg" alt="Personal técnico certificado de Multiservicios Aguilar" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjetas de Pilares Principales -->
+                <div class="col-lg-7 reveal-right">
+                    <div class="about-pillars-list">
+                        <!-- Pilar 01 -->
+                        <div class="about-pillar-row">
+                            <span class="pillar-number">01</span>
+                            <div class="pillar-body">
+                                <h3>Soluciones Integrales de Principio a Fin</h3>
+                                <p>Nuestra misión es cubrir cada etapa de su proyecto: cálculo de carga térmica, venta de equipos, montaje especializado y pólizas de mantenimiento preventivo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 02 -->
+                        <div class="about-pillar-row">
+                            <span class="pillar-number">02</span>
+                            <div class="pillar-body">
+                                <h3>Compromiso Ético & Sustentabilidad</h3>
+                                <p>Nuestra visión es liderar con tecnología Inverter y refrigerantes ecológicos certificados bajo estrictas normas de seguridad ambiental que reducen su gasto eléctrico.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 03 -->
+                        <div class="about-pillar-row">
+                            <span class="pillar-number">03</span>
+                            <div class="pillar-body">
+                                <h3>Respuesta Técnica Urgente 24/7</h3>
+                                <p>Atención especializada de emergencia las 24 horas para resolver fugas, fallas eléctricas o compresores, garantizando la continuidad de su negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Bootstrap 5.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <!-- Script de Rotación de Palabra -->
+    <!-- Scripts de Animación y Rotación -->
     <script>
+        // 1. Rotación de Palabras en Hero
         (function() {
             const words = [
                 "garantía",
@@ -150,6 +213,24 @@
 
             }, 2400);
         })();
+
+        // 2. Animaciones de Entrada con Scroll (Reveal Up / Left / Right)
+        document.addEventListener('DOMContentLoaded', () => {
+            const directionalReveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            directionalReveals.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
