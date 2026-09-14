@@ -1145,6 +1145,43 @@ a {
         padding: 2.4rem;
     }
 
+    /* Misión & Visión Carrusel Swipe en Pantallas Móviles (< 992px) */
+    .mv-carousel-track {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0.6rem 0.2rem 1.2rem 0.2rem;
+        gap: 1.1rem;
+    }
+
+    .mv-carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mv-carousel-item {
+        flex: 0 0 88% !important;
+        max-width: 88% !important;
+        scroll-snap-align: center;
+    }
+
+    .mv-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #CBD5E1;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mv-dot.active {
+        background: #0077B6;
+        width: 26px;
+        border-radius: 20px;
+    }
+
     .reveal-left,
     .reveal-right,
     .reveal-up {
@@ -1279,6 +1316,20 @@ a {
     .pillar-body p {
         font-size: 0.88rem;
         line-height: 1.5;
+    }
+
+    /* Misión y Visión en Celular */
+    .mv-card {
+        padding: 2rem 1.5rem;
+        border-radius: 22px;
+    }
+
+    .mv-title {
+        font-size: 1.45rem;
+    }
+
+    .mv-text {
+        font-size: 0.92rem;
     }
 
     /* Servicios en Celular */

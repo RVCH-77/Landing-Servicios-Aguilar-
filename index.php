@@ -185,12 +185,12 @@
             </div>
 
             <!-- ==========================================================================
-                 BLOQUE: MISIÓN & VISIÓN (INTEGRADO EN NOSOTROS)
+                 BLOQUE: MISIÓN & VISIÓN (GRID EN PC / CARRUSEL EN MÓVIL)
                  ========================================================================== -->
             <div class="mission-vision-grid mt-5 pt-lg-4">
-                <div class="row g-4">
+                <div class="row g-4 mv-carousel-track" id="mv-carousel-track">
                     <!-- Tarjeta 1: Misión -->
-                    <div class="col-lg-6 reveal-left">
+                    <div class="col-lg-6 mv-carousel-item reveal-left">
                         <div class="mv-card mv-card-mission h-100">
                             <div class="mv-header justify-content-end">
                                 <span class="mv-badge">Propósito & Compromiso</span>
@@ -213,7 +213,7 @@
                     </div>
 
                     <!-- Tarjeta 2: Visión -->
-                    <div class="col-lg-6 reveal-right">
+                    <div class="col-lg-6 mv-carousel-item reveal-right">
                         <div class="mv-card mv-card-vision h-100">
                             <div class="mv-header justify-content-end">
                                 <span class="mv-badge">Futuro & Liderazgo</span>
@@ -234,6 +234,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Indicadores Dots en Móvil -->
+                <div class="mv-mobile-dots d-flex d-lg-none justify-content-center gap-2 mt-3" id="mv-mobile-dots">
+                    <span class="mv-dot active"></span>
+                    <span class="mv-dot"></span>
                 </div>
             </div>
         </div>
@@ -418,7 +424,7 @@
                         <div class="scope-carousel-item">
                             <div class="service-scope-card h-100">
                                 <div class="scope-icon-box">
-                                    <i class="bi bi-leaf"></i>
+                                    <i class="bi bi-recycle"></i>
                                 </div>
                                 <h4>Sustentabilidad & Ahorro</h4>
                                 <p>Tecnología Inverter y gases ecológicos que reducen sustancialmente el gasto eléctrico y la huella de carbono.</p>
@@ -746,7 +752,21 @@
             }, { passive: true });
         })();
 
-        // 4. Animaciones de Entrada con Scroll (Reveal Up / Left / Right)
+        // 4. Indicador de Dots en Móvil para Misión & Visión
+        (function() {
+            const mvTrack = document.getElementById('mv-carousel-track');
+            const mvDots = document.querySelectorAll('#mv-mobile-dots .mv-dot');
+            if (!mvTrack || mvDots.length === 0) return;
+
+            mvTrack.addEventListener('scroll', () => {
+                const scrollLeft = mvTrack.scrollLeft;
+                const width = mvTrack.offsetWidth * 0.75;
+                const activeIdx = Math.min(mvDots.length - 1, Math.max(0, Math.round(scrollLeft / width)));
+                mvDots.forEach((d, idx) => d.classList.toggle('active', idx === activeIdx));
+            }, { passive: true });
+        })();
+
+        // 5. Animaciones de Entrada con Scroll (Reveal Up / Left / Right)
         document.addEventListener('DOMContentLoaded', () => {
             const directionalReveals = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
             
