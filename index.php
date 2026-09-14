@@ -691,7 +691,7 @@
             });
         })();
 
-        // 3. Interactividad del Carrusel de Alcance Total
+        // 3. Interactividad del Carrusel de Alcance Total (Páginas Inteligentes)
         (function() {
             const track = document.getElementById('scope-carousel-track');
             const prevBtn = document.getElementById('btn-scope-prev');
@@ -703,42 +703,63 @@
             const items = track.querySelectorAll('.scope-carousel-item');
             if (items.length === 0) return;
 
-            // Generar dots dinámicos
-            items.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.className = `scope-dot ${i === 0 ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Ir a diapositiva ${i + 1}`);
-                dot.addEventListener('click', () => {
-                    const itemWidth = items[0].offsetWidth + 24;
-                    track.scrollTo({ left: i * itemWidth, behavior: 'smooth' });
-                });
-                dotsContainer.appendChild(dot);
-            });
+            function updateDots() {
+                if (!dotsContainer) return;
+                dotsContainer.innerHTML = '';
+                
+                const itemWidth = items[0].offsetWidth;
+                const visibleCount = Math.max(1, Math.round(track.clientWidth / (itemWidth + 12)));
+                const pageCount = Math.ceil(items.length / visibleCount);
+                
+                for (let i = 0; i < pageCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = `scope-dot ${i === 0 ? 'active' : ''}`;
+                    dot.setAttribute('aria-label', `Ir a página ${i + 1}`);
+                    dot.addEventListener('click', () => {
+                        const maxScroll = track.scrollWidth - track.clientWidth;
+                        const targetScroll = Math.min(maxScroll, i * track.clientWidth);
+                        track.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
 
-            const dots = dotsContainer.querySelectorAll('.scope-dot');
-
-            function getScrollAmount() {
-                return items[0].offsetWidth + 24;
+            function syncActiveDot() {
+                const dots = dotsContainer.querySelectorAll('.scope-dot');
+                if (dots.length === 0) return;
+                const maxScroll = track.scrollWidth - track.clientWidth;
+                if (maxScroll <= 0) return;
+                const progress = track.scrollLeft / maxScroll;
+                const activeIndex = Math.min(dots.length - 1, Math.round(progress * (dots.length - 1)));
+                dots.forEach((d, idx) => d.classList.toggle('active', idx === activeIndex));
             }
 
             nextBtn.addEventListener('click', () => {
-                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                const scrollAmount = track.clientWidth * 0.85;
+                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 15) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
             });
 
             prevBtn.addEventListener('click', () => {
-                track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                const scrollAmount = track.clientWidth * 0.85;
+                if (track.scrollLeft <= 15) {
+                    track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
             });
 
-            // Actualizar active dot al hacer scroll
-            track.addEventListener('scroll', () => {
-                const scrollLeft = track.scrollLeft;
-                const itemWidth = items[0].offsetWidth + 24;
-                const activeIndex = Math.min(items.length - 1, Math.max(0, Math.round(scrollLeft / itemWidth)));
-                dots.forEach((d, idx) => {
-                    d.classList.toggle('active', idx === activeIndex);
-                });
-            }, { passive: true });
+            track.addEventListener('scroll', syncActiveDot, { passive: true });
+            window.addEventListener('resize', () => {
+                updateDots();
+                syncActiveDot();
+            });
+
+            updateDots();
         })();
 
         // 4. Indicador de Dots en Móvil para Misión & Visión
