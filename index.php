@@ -442,27 +442,16 @@
                 <!-- Indicadores / Dots del Carrusel -->
                 <div class="scope-carousel-dots d-flex justify-content-center gap-2 mt-4" id="scope-carousel-dots"></div>
 
-                <!-- Bloque CTA Inferior (Inspirado en Bean Scene: "Great ideas start with...") -->
-                <div class="scope-cta-strip text-center mt-5 reveal-up">
-                    <h4>Grandes proyectos inician con una asesoría técnica especializada.</h4>
-                    <p>Permítanos evaluar sus instalaciones y ofrecerle la solución más eficiente y rentable para su empresa.</p>
-                    <a href="https://wa.me/524777871179?text=Hola,%20solicito%20una%20asesor%C3%ADa%20t%C3%A9cnica%20para%20un%20proyecto" target="_blank" class="btn btn-primary-hero">
-                        <span>Comenzar Hoy Mismo</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
+               
             </div>
 
             <!-- Banner de Cobertura Regional y Ventajas Competitivas -->
             <div class="services-coverage-banner reveal-up">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
-                        <span class="coverage-badge">
-                            <i class="bi bi-geo-alt-fill"></i> Cobertura Regional & Nacional
-                        </span>
-                        <h3 class="coverage-title">Servicio y Soporte Técnico en Todo el Bajío y la República</h3>
+                        <h3 class="coverage-title">Servicio y Soporte Técnico en México</h3>
                         <p class="coverage-desc">
-                            Atendemos activamente en <strong>Guadalajara, Guanajuato, Querétaro, Aguascalientes, Romita, Apaseo el Grande</strong> y zonas industriales clave.
+                            Atendemos activamente en <strong>Guadalajara, Guanajuato, Querétaro, Aguascalientes y más...</strong>
                         </p>
                         <div class="coverage-perks">
                             <div class="coverage-perk-item">
