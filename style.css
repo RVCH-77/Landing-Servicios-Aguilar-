@@ -31,6 +31,10 @@ html {
     scroll-behavior: smooth;
 }
 
+section[id] {
+    scroll-margin-top: 1.5rem;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--color-text);
@@ -1292,6 +1296,111 @@ a {
         font-size: 0.95rem;
         padding: 0.85rem 1.5rem;
     }
+
+    
 }
 
 
+/* ==========================================================================
+   TARJETAS MISIÓN & VISIÓN (BENTO DUAL CARDS)
+   ========================================================================== */
+.mission-vision-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.mv-card {
+    background: #F8FAFC;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 26px;
+    padding: 2.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mv-card:hover {
+    background: #FFFFFF;
+    transform: translateY(-5px);
+    border-color: rgba(0, 119, 182, 0.3);
+    box-shadow: 0 16px 36px rgba(11, 30, 54, 0.07);
+}
+
+.mv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.mv-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.25);
+}
+
+.mv-card-mission .mv-icon-box {
+    background: linear-gradient(135deg, #0B1E36 0%, #0077B6 100%);
+}
+
+.mv-card-vision .mv-icon-box {
+    background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+}
+
+.mv-badge {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #0077B6;
+    background: rgba(0, 119, 182, 0.08);
+    padding: 0.35rem 0.85rem;
+    border-radius: 30px;
+}
+
+.mv-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.5px;
+}
+
+.mv-text {
+    font-size: 0.98rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+}
+
+.mv-perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.mv-perk-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.mv-perk-item i {
+    color: #0077B6;
+    font-size: 0.95rem;
+}

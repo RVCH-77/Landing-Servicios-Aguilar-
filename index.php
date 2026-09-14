@@ -174,10 +174,63 @@
 
                         <!-- Pilar 04 -->
                         <div class="about-pillar-row">
-                            <span class="pillar-number"> 04 </span>
+                            <span class="pillar-number">04</span>
                             <div class="pillar-body">
                                 <h3>Cobertura Nacional</h3>
-                                <p> Cubrimos todo el territorio nacional para brindar soluciones de refrigeración a todo tipo de empresas.  </p>
+                                <p>Cubrimos todo el territorio nacional para brindar soluciones de refrigeración a cualquier tipo de sector empresarial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================================
+                 BLOQUE: MISIÓN & VISIÓN (INTEGRADO EN NOSOTROS)
+                 ========================================================================== -->
+            <div class="mission-vision-grid mt-5 pt-lg-4">
+                <div class="row g-4">
+                    <!-- Tarjeta 1: Misión -->
+                    <div class="col-lg-6 reveal-left">
+                        <div class="mv-card mv-card-mission h-100">
+                            <div class="mv-header justify-content-end">
+                                <span class="mv-badge">Propósito & Compromiso</span>
+                            </div>
+                            <h3 class="mv-title">Nuestra Misión</h3>
+                            <p class="mv-text">
+                                Brindar soluciones integrales de refrigeración comercial e industrial con la más alta precisión técnica, garantizando la continuidad operativa y la cadena de frío de nuestros clientes mediante tecnología de vanguardia, refacciones originales y atención inmediata.
+                            </p>
+                            <div class="mv-perks">
+                                <div class="mv-perk-item">
+                                    <i class="bi bi-patch-check-fill"></i>
+                                    <span>Respuesta Técnica Inmediata</span>
+                                </div>
+                                <div class="mv-perk-item">
+                                    <i class="bi bi-patch-check-fill"></i>
+                                    <span>Garantía por Escrito de 30 Días</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Visión -->
+                    <div class="col-lg-6 reveal-right">
+                        <div class="mv-card mv-card-vision h-100">
+                            <div class="mv-header justify-content-end">
+                                <span class="mv-badge">Futuro & Liderazgo</span>
+                            </div>
+                            <h3 class="mv-title">Nuestra Visión</h3>
+                            <p class="mv-text">
+                                Consolidarnos como la empresa referente y líder en soluciones térmicas y refrigeración sustentable en todo el Bajío y la República Mexicana, reconocidos por nuestra innovación con tecnología Inverter, responsabilidad ecológica y la excelencia de nuestro equipo humano.
+                            </p>
+                            <div class="mv-perks">
+                                <div class="mv-perk-item">
+                                    <i class="bi bi-patch-check-fill"></i>
+                                    <span>Tecnología Ecológica Inverter</span>
+                                </div>
+                                <div class="mv-perk-item">
+                                    <i class="bi bi-patch-check-fill"></i>
+                                    <span>Liderazgo & Cobertura Nacional</span>
+                                </div>
                             </div>
                         </div>
                     </div>
